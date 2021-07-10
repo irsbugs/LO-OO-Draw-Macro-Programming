@@ -29,3 +29,31 @@ Tools --> Macros --> Edit Macros --> floor_plan.odg --> Standaard --> Module1.
 An Integrated Developemnt Environment window then provides a means to edit and run the BASIC scripting.
 
 The BASIC script that is embedded in *floor_plan.odg* has been attached as the file *floor_plan.bas*. This file may be reviewed and copied to retrieve sections of code to use in other documents.
+
+## Known Issues
+
+1. There is a boolean feature named *Design Mode*. It may be manually toggled by clicking:
+```
+Tools --> Forms --> Design Mode
+```
+Although this toggling of *Design Mode* may be performed programatically, this does not appear to work. Thus upon completion of starting the BASIC script it may be necessary to manually toggle *Design Mode* a few times in order for the control push-buttons to commence operation.
+
+2. By default the Layers provided which have visual controls are: 
+
+* layout ~ layer Identification = 0 ~ Displayed as: Layout
+* controls ~ layer Identification = 3 ~ Displayed as: Controls
+* measurelines ~ layer Identification = 4 ~ Displayed as: Dimension Lines
+
+Additionally there are two layers automatically provided for which there are no visual controls:
+* background ~ layer Identification = 1 ~ Not displayed
+* backgroundobjects ~ layer identification = 2 ~ Not displayed
+
+The BASIC script adds the following three layers:
+* Border ~ layer Identification = 5 ~ Displayed as: Borders
+* Grid ~ layer identification = 6 ~ Displayed as Grid
+* Piles ~ layer identification = 7 ~ Disploayed as Piles
+
+The controlable layers from the above should be able to be modified to enable and disable the visibility of the elements in the layer. This feature seem to be unstable.
+
+
+
