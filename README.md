@@ -61,7 +61,7 @@ Tools--> Options --> LibreOffide Draw--> General-->
 ```
 then set:
 ```
-Drawing Scale 1:80
+Drawing Scale: 1:80
 Unit of measure: Meter.
 ```
 
