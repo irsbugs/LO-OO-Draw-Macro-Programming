@@ -55,5 +55,14 @@ The BASIC script adds the following three layers:
 
 The controlable layers from the above should be able to be modified to enable and disable the visibility of the elements in the layer. This feature seem to be unstable.
 
+3. There does not appear to be a way to programmatically set the overall scale of a diagram. This is required if Dimension Lines are used in the diagram. To manually set the scale of 1:80 for the *floor_plan.odg* preform the following:
+```
+Tools--> Options --> LibreOffide Draw--> General--> 
+```
+then set:
+```
+Drawing Scale 1:80
+Unit of measure: Meter.
+```
 
 
