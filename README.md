@@ -22,18 +22,10 @@ The shapes used to draw the *floor_plan.odg* diagram are:
 * Text boxes
 * Polygon
 
-To access the BASIC script click on: Tools --> Macros --> Edit Macros --> floor_plan.odg --> Standaard --> Module1. An Integrated Developemnt Environment window then provides a means to edit and run the BASIC scripting.
+To access the BASIC script click on: 
+```
+Tools --> Macros --> Edit Macros --> floor_plan.odg --> Standaard --> Module1. 
+```
+An Integrated Developemnt Environment window then provides a means to edit and run the BASIC scripting.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+The BASIC script that is embedded in *floor_plan.odg* has been attached as the file *floor_plan.bas*. This file may be reviewed and copied to retrieve sections of code to use in other documents.
