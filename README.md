@@ -147,33 +147,44 @@ end sub
 ```
 The subroutine is passed the start point for the line, the X and Y points. The width and height, W and H values, to determine the end point of the dimension being measured. The offset in 1/100 of a mm of the dimension line from the points being measured. The direction of the offset, above or below the line being measured.
 
-* Drawing a set of lines using PolPolygonShape.
+* Drawing a set of lines using PolPolygonShape. The Polygon is simple compared to drawing individual lines.
 ```
 sub border_line
 	' Draw a border at 600 on a sheet of Landscape A4. 
 	' Polygon more simple than drawing individual lines.
-	Dim PolyPolygonShape As Object
-	Dim PolyPolygon As Variant
-	Dim Square1(3) As New com.sun.star.awt.Point
+	Dim oDoc as object
+	Dim oPage as object	
+	Dim Square(3) As New com.sun.star.awt.Point
+
+	oDoc = ThisComponent
+	oPage = oDoc.DrawPages(0)
 	
+	' Clear the Page of all elements...
+	for i = oPage.getCount - 1 to 0 step -1
+		oPage.Remove(oPage.getByIndex(i))
+	next i
+
+	wait 2000
+
 	PolyPolygonShape = oDoc.createInstance("com.sun.star.drawing.PolyPolygonShape")
-	PolyPolygonShape.LayerID = 5		
+	'PolyPolygonShape.LayerID = 5		
 	PolyPolygonShape.LineColor = 0
 	PolyPolygonShape.LineWidth = 10
 	PolyPolygonShape.FillTransparence = 100
 		 
-	oPage.add(PolyPolygonShape) ' Page.add must take place before the coordinates are set
-	 
-	Square1(0).x = 600
-	Square1(1).x = 29100
-	Square1(2).x = 29100
-	Square1(3).x = 600
-	Square1(0).y = 600
-	Square1(1).y = 600
-	Square1(2).y = 20400
-	Square1(3).y = 20400
+	oPage.add(PolyPolygonShape) 
+	' Page.add must take place before the coordinates are set
+		 
+	Square(0).x = 600
+	Square(1).x = 29100
+	Square(2).x = 29100
+	Square(3).x = 600
+	Square(0).y = 600
+	Square(1).y = 600
+	Square(2).y = 20400
+	Square(3).y = 20400
 
-	PolyPolygonShape.PolyPolygon = Array(Square1())
+	PolyPolygonShape.PolyPolygon = Array(Square())
 end sub
 ```
 
