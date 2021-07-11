@@ -161,6 +161,8 @@ The subroutine is passed the start point for the line, the X and Y points. The w
 	end if
 ```	
 Constants for msgbox:
+
+* Button combination:
 ```
 0, MB_OK - OK button
 1, MB_OKCANCEL - OK and Cancel button
@@ -168,21 +170,27 @@ Constants for msgbox:
 3, MB_YESNOCANCEL - Yes, No, and Cancel buttons
 4, MB_YESNO - Yes and No buttons
 5, MB_RETRYCANCEL - Retry and Cancel buttons
-
+```
+* Button highlighted to be accepted as the default:
+```
 0, MB_DEFBUTTON1 - First button is default value
 256, MB_DEFBUTTON2 - Second button is default value
 512, MB_DEFBUTTON3 - Third button is default value				
-
+```
+* Icon to be displayed
+```
 16, MB_ICONSTOP - Stop sign
 32, MB_ICONQUESTION - Question mark
 48, MB_ICONEXCLAMATION - Exclamation point
 64, MB_ICONINFORMATION - Tip icon
-
+```
+Returned values depending on button clicked:
+```
 1, IDOK - Ok
 2, IDCANCEL - Cancel
 3, IDABORT - Abort
 4, IDRETRY - Retry
-5 - Ignore
+5, IDIGNORE - Ignore
 6, IDYES - Yes
 7, IDNO - No
 ```	
