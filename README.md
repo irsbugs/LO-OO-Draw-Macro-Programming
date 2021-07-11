@@ -148,7 +148,7 @@ end sub
 The subroutine is passed the start point for the line, the X and Y points. The width and height, W and H values, to determine the end point of the dimension being measured. The offset in 1/100 of a mm of the dimension line from the points being measured. The direction of the offset, above or below the line being measured.
 
 * Drawing a set of lines using PolPolygonShape.
-
+```
 sub border_line
 	' Draw a border at 600 on a sheet of Landscape A4. 
 	' Polygon more simple than drawing individual lines.
@@ -175,6 +175,7 @@ sub border_line
 
 	PolyPolygonShape.PolyPolygon = Array(Square1())
 end sub
+```
 
 * A message box dialog
 ```
