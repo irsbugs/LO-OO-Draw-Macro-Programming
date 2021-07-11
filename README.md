@@ -161,6 +161,7 @@ The subroutine is passed the start point for the line, the X and Y points. The w
 	end if
 ```	
 Constants for msgbox:
+```
 0, MB_OK - OK button
 1, MB_OKCANCEL - OK and Cancel button
 2, MB_ABORTRETRYIGNORE - Abort, Retry, and Ignore buttons
@@ -184,5 +185,5 @@ Constants for msgbox:
 5 - Ignore
 6, IDYES - Yes
 7, IDNO - No
-	
+```	
 	 
