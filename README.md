@@ -64,10 +64,9 @@ then set:
 Drawing Scale: 1:80
 Unit of measure: Meter.
 ```
+## References
 
-## Examples of BASIC code.
-
-* Guide to programming in BASIC.
+* Guides to programming in BASIC.
 
 A Guide to BASIC programming for LO is available online: 
 https://help.libreoffice.org/latest/en-GB/text/sbasic/shared/main0601.html?DbPAR=BASIC
@@ -75,6 +74,9 @@ https://help.libreoffice.org/latest/en-GB/text/sbasic/shared/main0601.html?DbPAR
 This includes an alphabetic list of command which starts here: 
 https://help.libreoffice.org/latest/en-GB/text/sbasic/shared/03080601.html?DbPAR=BASIC
 
+
+
+## Examples of BASIC code.
 
 The following is an overview with examples from the BASIC script used for *floor_plan.odg*.
 
@@ -107,6 +109,9 @@ Const PILE_Y_SIZE as integer = 250
 ```
 
 * A Dimension line is provided by the following subroutine:
+Call: ruler(3000, 4000, 12000, 0, 1500, False)
+i.e.:
+Start at point X=3000, Y=4000, Horizontal Width = 12000, Vertical Height = 0, Offset from the line of 1500 points, Place in default position.
 
 ```
 sub ruler(X as long, Y as long, W as long, H as long, optional MDL as integer, _
@@ -140,9 +145,36 @@ sub ruler(X as long, Y as long, W as long, H as long, optional MDL as integer, _
 	MeasureShape.CharHeight = 12				
 end sub
 ```
-
 The subroutine is passed the start point for the line, the X and Y points. The width and height, W and H values, to determine the end point of the dimension being measured. The offset in 1/100 of a mm of the dimension line from the points being measured. The direction of the offset, above or below the line being measured.
 
+* Drawing a set of lines using PolPolygonShape.
+
+sub border_line
+	' Draw a border at 600 on a sheet of Landscape A4. 
+	' Polygon more simple than drawing individual lines.
+	Dim PolyPolygonShape As Object
+	Dim PolyPolygon As Variant
+	Dim Square1(3) As New com.sun.star.awt.Point
+	
+	PolyPolygonShape = oDoc.createInstance("com.sun.star.drawing.PolyPolygonShape")
+	PolyPolygonShape.LayerID = 5		
+	PolyPolygonShape.LineColor = 0
+	PolyPolygonShape.LineWidth = 10
+	PolyPolygonShape.FillTransparence = 100
+		 
+	oPage.add(PolyPolygonShape) ' Page.add must take place before the coordinates are set
+	 
+	Square1(0).x = 600
+	Square1(1).x = 29100
+	Square1(2).x = 29100
+	Square1(3).x = 600
+	Square1(0).y = 600
+	Square1(1).y = 600
+	Square1(2).y = 20400
+	Square1(3).y = 20400
+
+	PolyPolygonShape.PolyPolygon = Array(Square1())
+end sub
 
 * A message box dialog
 ```
@@ -184,7 +216,7 @@ Constants for msgbox:
 48, MB_ICONEXCLAMATION - Exclamation point
 64, MB_ICONINFORMATION - Tip icon
 ```
-Returned values depending on button clicked:
+* Returned values depending on button clicked:
 ```
 1, IDOK - Ok
 2, IDCANCEL - Cancel
