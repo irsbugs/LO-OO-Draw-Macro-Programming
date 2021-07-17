@@ -356,6 +356,6 @@ Tools--> Macro--> Run Macros --> Library: My Macros --> draw_uno_plan --> Macro 
 
 ## Screenshot
 
-[https://github.com/irsbugs/LO-OO-Draw-Macro-Programming/blob/main/screenshot_floor_plan.png]
+<img src="https://github.com/irsbugs/LO-OO-Draw-Macro-Programming/blob/main/screenshot_floor_plan.png">
 
 
