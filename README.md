@@ -355,3 +355,6 @@ Tools--> Macro--> Run Macros --> Library: My Macros --> draw_uno_plan --> Macro 
     ```
 
 ## Screenshot
+
+[[screenshot_floor_plan.png]]
+
