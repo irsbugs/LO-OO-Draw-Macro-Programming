@@ -312,30 +312,40 @@ Tools--> Macro--> Run Macros --> Library: My Macros --> draw_uno_plan --> Macro 
     sScriptURL = "vnd.sun.star.script:Standard.Module1.ButtonPushEvent?language=Basic&location=document"
     
     Some other link...
+    ```
     sScriptURL = "vnd.sun.star.script:ScriptBindingLibrary.MacroEditor?location=application"
-    above equales:  ScriptBindingLibrary.MacroEditor (application, )
+    ```
+    above equates to:`ScriptBindingLibrary.MacroEditor (application, )`
     
-    For program: ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py
+    For program: ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py:
+    ```
     Function: button_push_event(button):
     sScriptURL = "vnd.sun.star.script:draw_uno_plan.py$button_push_event?language=Python&location=user"
+    ```
+    This equates to:
+    ```
     Events, Execute Action: draw_uno_plan.py$button_push_event (user, Python)
- 
+    ```
+    
 5.  aEvent = uno.createUnoStruct("com.sun.star.script.ScriptEventDescriptor")
     aEvent has these structures...
+    ```
     ListenerType:	listener type as string, same as listener-XIdlClass.getName().  
     EventMethod:	event method as string.  
     AddListenerParam:	data to be used if the addListener method needs an additional parameter.  
     ScriptType:	    type of the script language as string; for example, "Basic" or "StarScript".  
     ScriptCode:	    script code as string (the code has to correspond with the language defined by ScriptType).          
-     
+    ``` 
    
 6.  The BASIC msgbox does not work with python. A messagebox function omsgbox() 
     is available. It only displays strings. Place anywhere to help debug code. E.g.
+    ```
     dir_list = dir(uno)
     omsgbox((", ").join(dir_list), "Python dir() Listing")
-
+```
 
 7.  Program control of "Design Mode" is suspect. May need to be toggled a few times.
+   ```
     Example for BASIC
     Global b as Boolean
     Sub toggleFormDesignMode()
@@ -343,3 +353,4 @@ Tools--> Macro--> Run Macros --> Library: My Macros --> draw_uno_plan --> Macro 
         c.setFormDesignMode(b)
         b = Not b
     End Sub
+    ```
