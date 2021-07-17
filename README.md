@@ -342,10 +342,9 @@ Tools--> Macro--> Run Macros --> Library: My Macros --> draw_uno_plan --> Macro 
     ```
     dir_list = dir(uno)
     omsgbox((", ").join(dir_list), "Python dir() Listing")
-```
-
+    ```
 7.  Program control of "Design Mode" is suspect. May need to be toggled a few times.
-   ```
+    ```
     Example for BASIC
     Global b as Boolean
     Sub toggleFormDesignMode()
@@ -354,3 +353,5 @@ Tools--> Macro--> Run Macros --> Library: My Macros --> draw_uno_plan --> Macro 
         b = Not b
     End Sub
     ```
+
+## Screenshot
