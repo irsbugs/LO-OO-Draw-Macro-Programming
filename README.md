@@ -1,5 +1,9 @@
 # LibreOffice or OpenOffice Draw Application. 
 
+Drawing using macro scripts:
+* Embedded BASIC
+* Python with Universal Network Objects *UNO*.
+
 # Drawing using embedded BASIC programming.
 
 The LibreOffice/OpenOffice (LO/OO) suite of applications all support the BASIC programming language being embedded in documents. The Draw application contains shapes, for example rectangle and ellipse, that may be programatically drawn onto the document page being created.
@@ -238,4 +242,76 @@ Constants for msgbox:
 6, IDYES - Yes
 7, IDNO - No
 ```	
-	 
+
+# Drawing using Python programming and UNO.
+# draw_uno_plan.py
+#
+# Objective: Interact with LibreOffice Draw using Python.
+#
+# Requires: python3-uno. i.e. import uno.
+#
+# On Linux system, locate this python file resides in:
+# ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py
+#
+# Initially launch a LibreOffice application as follows:
+# $ libreoffice --calc --accept="socket,host=localhost,port=2002;urp;StarOffice.ServiceManager"
+# $ libreoffice --draw --accept="socket,host=localhost,port=2002;urp;StarOffice.ServiceManager"
+#
+# TODO: Launch LibreOffice application with socket connection from within this code.
+#
+# Launch program with:
+# $ python ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py
+# OR:
+# Tools--> Macro--> Run Macros --> Library: My Macros --> draw_uno_plan --> 
+# Macro Name: main --> Run
+
+1.  Be aware of case sensitivity.
+
+2.  References: 
+    http://christopher5106.github.io/office/2015/12/06/openoffice-libreoffice-automate-your-office-tasks-with-python-macros.html
+    https://wiki.documentfoundation.org/Macros/Python_Guide/Introduction
+    https://wiki.documentfoundation.org/Macros/Python_Design_Guide
+    https://www.scribd.com/document/75405001/OpenOffice-org-Developer-s-Guide-Professional-UNO    
+    https://wiki.openoffice.org/wiki/Python/Transfer_from_Basic_to_Python  
+    https://wiki.openoffice.org/wiki/Python/Transfer_from_Basic_to_Python#Script_Context
+    https://forum.openoffice.org/en/forum/viewtopic.php?f=20&t=66707&p=296638&hilit=CreateButton#p296638
+     
+3.  This code uses uno module rather than XSCRIPTCONTEXT. See...
+    https://wiki.openoffice.org/wiki/PyUNO_samples - TableSample.py
+
+4.  Change to be a file. required by "AssignAction()  ScriptEventDescriptor.ScriptCode"
+    Typical BASIC...
+    sScriptURL = "vnd.sun.star.script:Standard.Module1.ButtonPushEvent?language=Basic&location=document"
+    
+    Some other link...
+    sScriptURL = "vnd.sun.star.script:ScriptBindingLibrary.MacroEditor?location=application"
+    above equales:  ScriptBindingLibrary.MacroEditor (application, )
+    
+    For program: ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py
+    Function: button_push_event(button):
+    sScriptURL = "vnd.sun.star.script:draw_uno_plan.py$button_push_event?language=Python&location=user"
+    Events, Execute Action: draw_uno_plan.py$button_push_event (user, Python)
+ 
+5.  aEvent = uno.createUnoStruct("com.sun.star.script.ScriptEventDescriptor")
+    aEvent has these structures...
+    ListenerType:	listener type as string, same as listener-XIdlClass.getName().  
+    EventMethod:	event method as string.  
+    AddListenerParam:	data to be used if the addListener method needs an additional parameter.  
+    ScriptType:	    type of the script language as string; for example, "Basic" or "StarScript".  
+    ScriptCode:	    script code as string (the code has to correspond with the language defined by ScriptType).          
+     
+   
+6.  The BASIC msgbox does not work with python. A messagebox function omsgbox() 
+    is available. It only displays strings. Place anywhere to help debug code. E.g.
+    dir_list = dir(uno)
+    omsgbox((", ").join(dir_list), "Python dir() Listing")
+
+
+7.  Program control of "Design Mode" is suspect. May need to be toggled a few times.
+    Example for BASIC
+    Global b as Boolean
+    Sub toggleFormDesignMode()
+        c = ThisComponent.getCurrentController()
+        c.setFormDesignMode(b)
+        b = Not b
+    End Sub
