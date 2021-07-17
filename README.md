@@ -296,6 +296,7 @@ Tools--> Macro--> Run Macros --> Library: My Macros --> draw_uno_plan --> Macro 
 1.  Be aware of case sensitivity.
 
 2.  References: 
+
     http://christopher5106.github.io/office/2015/12/06/openoffice-libreoffice-automate-your-office-tasks-with-python-macros.html
     https://wiki.documentfoundation.org/Macros/Python_Guide/Introduction
     https://wiki.documentfoundation.org/Macros/Python_Design_Guide
@@ -309,8 +310,9 @@ Tools--> Macro--> Run Macros --> Library: My Macros --> draw_uno_plan --> Macro 
 
 4.  Change to be a file. required by "AssignAction()  ScriptEventDescriptor.ScriptCode"
     Typical BASIC...
+    ```
     sScriptURL = "vnd.sun.star.script:Standard.Module1.ButtonPushEvent?language=Basic&location=document"
-    
+    ```
     Some other link...
     ```
     sScriptURL = "vnd.sun.star.script:ScriptBindingLibrary.MacroEditor?location=application"
