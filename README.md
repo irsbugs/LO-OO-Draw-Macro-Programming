@@ -244,26 +244,54 @@ Constants for msgbox:
 ```	
 
 # Drawing using Python programming and UNO.
-# draw_uno_plan.py
-#
-# Objective: Interact with LibreOffice Draw using Python.
-#
-# Requires: python3-uno. i.e. import uno.
-#
-# On Linux system, locate this python file resides in:
-# ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py
-#
-# Initially launch a LibreOffice application as follows:
-# $ libreoffice --calc --accept="socket,host=localhost,port=2002;urp;StarOffice.ServiceManager"
-# $ libreoffice --draw --accept="socket,host=localhost,port=2002;urp;StarOffice.ServiceManager"
-#
-# TODO: Launch LibreOffice application with socket connection from within this code.
-#
-# Launch program with:
-# $ python ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py
-# OR:
-# Tools--> Macro--> Run Macros --> Library: My Macros --> draw_uno_plan --> 
-# Macro Name: main --> Run
+
+The LibreOffice/OpenOffice (LO/OO) suite of applications support a Python programming script communicating with LO/OO via the 
+Universal Network Objects *UNO*. The Draw application contains shapes, for example rectangle and ellipse, that may be 
+programatically drawn onto the document page being created. Also Form Controls, such as buttons, may be dynamically added
+to the page that is drawn.
+
+The attached Python program provides a demonstration:
+
+* draw_uno_plan.py
+
+## Installation
+
+On Linux systems, for example Ubuntu Mate 20.04.2 with LibreOffice 6.4.7.2, this file is located at:
+```
+ ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py
+```
+
+The system must include Python3 and the Python module uno. Install this with the command:
+```
+$ sudo apt install python3-uno
+```
+
+## Launching draw_uno_plan.py:
+
+* Open two console terminal windows.
+
+* In one terminal window enter the command:
+```
+ $ libreoffice --draw --accept="socket,host=localhost,port=2002;urp;StarOffice.ServiceManager"
+```
+
+* In the other terminal window enter the command:
+```
+$ python ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py
+```
+
+The LibreOffice Draw application will be launched and the program will add the shapes to create the 
+drawing. Also added are three Form Control Buttons. After this the Python program terminates.
+
+The drawing is 12m x 10m floor plan with a one meter reference grid. Clicking on the three buttons
+allows modelling of different piles layouts for the floor. Thus, although the Python program has terminated, 
+the buttons allow running a series of functions within the program.
+
+The program may also be run from the LibreOffice Menu bar with:
+
+Tools--> Macro--> Run Macros --> Library: My Macros --> draw_uno_plan --> Macro Name: main --> Run
+
+## Notes and Reference links for writing Python programs for LO/OO
 
 1.  Be aware of case sensitivity.
 
