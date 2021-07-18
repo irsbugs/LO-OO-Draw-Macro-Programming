@@ -28,7 +28,7 @@ The shapes used to draw the *floor_plan.odg* diagram are:
 
 To access the BASIC script click on: 
 ```
-Tools --> Macros --> Edit Macros --> floor_plan.odg --> Standaard --> Module1. 
+Tools --> Macros --> Edit Macros --> floor_plan.odg --> Standard --> Module1. 
 ```
 An Integrated Developemnt Environment window then provides a means to edit and run the BASIC scripting.
 
