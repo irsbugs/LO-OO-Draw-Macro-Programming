@@ -361,3 +361,29 @@ Tools--> Macro--> Run Macros --> Library: My Macros --> draw_uno_plan --> Macro 
 <img src="https://github.com/irsbugs/LO-OO-Draw-Macro-Programming/blob/main/screenshot_floor_plan.png">
 
 
+# Python embeded in a LO/OO document
+
+BASIC is the default language that LO/OO support for being embedded into a document. The support includes a BASIC IDE. Examination of an ODF file with embedded BASIC reveals a directory structure of Basic/Standard/Module1.xml, where Module1.xml is the default name for the module that contains the BASIC code, stored in XML format. The META-INF/manifest.xml file contains details of the Basic files.
+
+When embedding Python scripts into a LO/OO document the process is described here...
+
+https://wiki.documentfoundation.org/Macros/Python_Guide/Introduction#Installation
+
+
+However, this process is simplified if an extension tool is added to LO/OO. This is the Alternative Python Script Organizer (APSO). It may be downloaded from here...
+
+https://extensions.libreoffice.org/en/extensions/show/apso-alternative-script-organizer-for-python
+
+Once it has been installed then click on Tools--> Extension Manager... and click on APSO so it is highlighted. Then click on Options. Set the Editor to the IDE normally used to develop Python. For example if you use Geany on a Linux system, enter /usr/bin/geany
+
+APSO is accessed by typing Shift+Alt+F11 or clicking on Tools--> Macros --> Organize python scripts. A new Module may then be created, and when the module is edited the IDE will launch so that entering python code may begin.
+
+Upon saving the IDE editing session, closing APSO, and saving and closing the LO/OO document, then upon the next time the document is launched is will have the python code available for execution.
+
+With embedded python code the document has the code stored at /Scripts/python/Module.py. The APSO tools embeds the python script and performs the modifications to the META-INF/manifest.xml.
+
+Attached are two examples of documents with embedded code. They are both Writer documents that contains two push-buttons labelled "Message" and "Clear". One document has embedded BASIC code, while the other has embedded Python. when the "message" button is pushed it displays in the document a "Hello World" message followed by listing the contents of the embedded program. These programs are:
+
+* writer_basic_example.odt
+* writer_python_example.odt
+
