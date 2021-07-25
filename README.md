@@ -14,7 +14,7 @@ LO/OO also support adding form controls to a Draw document. For example, push-bu
 
 Attached is the Draw document:
 
-* floor_plan.odg
+* draw_embedded_basic_plan.odg
 
 It includes BASIC script which Draws every part of the diagram. It shows a floor area of a house and allows three alternative layouts of the piles to be reviewed by clicking on buttons.
 
