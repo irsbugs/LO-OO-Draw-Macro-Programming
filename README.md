@@ -3,6 +3,7 @@
 Drawing using macro scripts:
 * Embedded BASIC
 * Python with Universal Network Objects *UNO*.
+* Embedded Python
 
 # Drawing using embedded BASIC programming.
 
@@ -386,4 +387,14 @@ Attached are two examples of documents with embedded code. They are both Writer 
 
 * writer_basic_example.odt
 * writer_python_example.odt
+
+# Drawing using embedded Python programming.
+
+Python scripts may be embedded in Draw documents. 
+
+The following document was the *draw_embedded_basic_plan.odg*, which then had its BASIC code re-written in Python and made use of UNO to be *draw_uno_plan.py*. This code was then embedded and modified with the aid of APSO to run as embedded Python code in the document:
+
+* draw_python_embedded_plan.odg
+
+Two buttons are added at the top of the document. They are labelled "Start" and "Clear". Clicking *Clear* will remove all elements from the drawing. It also remove three layers that get added. Clicking "Start" will run the Python code to draw a floor plan and add layers.
 
