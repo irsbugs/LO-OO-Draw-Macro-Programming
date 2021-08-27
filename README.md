@@ -400,7 +400,7 @@ Two buttons are added at the top of the document. They are labelled "Start" and 
 
 # Calc using embedded Python programming
 
-The following document is a Calc spreadsheet. On *Sheet1* ater the push buttons *Clear* and *Create*. These buttons create and remove a sheet labelled Amortization. On this sheet three ScrollBars are provided so that a loan may be modelled and the amortization of the loan made available as data and in a chart. The creating and modelling of the data is performed by Python code, which is embedded in the document. 
+The following document is a Calc spreadsheet. On *Sheet1* are the push buttons *Clear* and *Create*. These buttons create and remove a sheet labelled *Amortization*. On this sheet three ScrollBars are provided so that a loan may be modelled and the amortization of the loan is made available as data and in a chart. The creating and modelling of the data is performed by Python code, which is embedded in the Calc document. 
 
 * calc_embedded_python_amortization.ods
 
