@@ -398,3 +398,9 @@ The following document was the *draw_embedded_basic_plan.odg*, which then had it
 
 Two buttons are added at the top of the document. They are labelled "Start" and "Clear". Clicking *Clear* will remove all elements from the drawing. It also remove three layers that get added. Clicking "Start" will run the Python code to draw a floor plan and add layers.
 
+# Calc using embedded Python programming
+
+The following document is a Calc spreadsheet. On *Sheet1* ater the push buttons *Clear* and *Create*. These buttons create and remove a sheet labelled Amortization. On this sheet three ScrollBars are provided so that a loan may be modelled and the amortization of the loan made available as data and in a chart. The creating and modelling of the data is performed by Python code, which is embedded in the document. 
+
+* calc_embedded_python_amortization.ods
+
