@@ -404,3 +404,7 @@ The following document is a Calc spreadsheet. On *Sheet1* ater the push buttons 
 
 * calc_embedded_python_amortization.ods
 
+## Screenshot
+
+<img src="https://github.com/irsbugs/LO-OO-Draw-Macro-Programming/blob/main/screenshot_amortization.png">
+
