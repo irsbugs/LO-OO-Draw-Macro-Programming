@@ -404,7 +404,7 @@ The following document is a Calc spreadsheet. On *Sheet1* are the push buttons *
 
 * calc_embedded_python_amortization.ods
 
-# Python programm using UNO to create Calc document.
+# Python program using UNO to create Calc document.
 
 The following python program will launch a Calc document and create a sheet with amortization data that may be modelled with scrollbars. 
 
