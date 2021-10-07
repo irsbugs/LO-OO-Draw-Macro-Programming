@@ -414,3 +414,16 @@ The following python program will launch a Calc document and create a sheet with
 
 <img src="https://github.com/irsbugs/LO-OO-Draw-Macro-Programming/blob/main/screenshot_amortization.png">
 
+
+# Python Msgbox
+
+The BASIC language provides a Message Box *msgbox* function, while Python does not have this feature.
+
+APSO comes with a small library **apso_utils** that contains some helpers for debugging purpose during macro writing. These helpers are four functions named *msgbox*, *xray*, *mri* and *console* and can be imported by a classic import statement like **from apso_utils import msgbox**
+
+The following writer document demonstrates a msgbox with python.
+
+* writer_python_msgbox.odt
+
+
+
