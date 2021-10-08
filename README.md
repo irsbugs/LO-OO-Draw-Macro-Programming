@@ -2,7 +2,7 @@
 
 LibreOffice and OpenOffice include a BASIC programming language. Some of the documents included in this repository utilise BASIC scripts.
 
-LibreOffice and OpenOffice also support programming using the Python language. Like BASIC, these python scripts may be in system wide files, local files, or embedded in the document. Embedding Python programs in a document is made easier by using the LO/OO extension *Alternative Python Script Organizer (APSO)* in conjunction with an IDE, for example *Geany*.
+LibreOffice and OpenOffice also support programming using the Python language. Like BASIC, these Python scripts may be in system wide files, local files, or embedded in the document. Embedding Python programs in a document is made easier by using the LO/OO extension *Alternative Python Script Organizer (APSO)* in conjunction with an IDE, for example *Geany*.
 
 This repository contains documents which utilize embedded Python scripts.
 
