@@ -1,0 +1,131 @@
+Slide Notes
+
+3: Previous WLUG meeting.
+
+STOP show and demo:
+    draw_embedded_basic_plan.odg
+    calc_embedded_basic_amortization.ods
+    
+    Show the BASIC code.
+    Show the MyMacros and LOMacros libraries
+    
+4 to 10: BASIC embedded in LO/OO documents
+
+    writer_basic_example.odt
+    
+11: Python embedded in LO/OO documents
+
+12: But first: Python NOT embedded in LO/OO documents
+    Using the PyUno bridge to TCPIP socket 2002
+    
+    Example:
+    
+    draw_uno_plan.py
+    
+    Run from local Desktop directory
+    Buttons don't work as expect callback in My Macros or LO Macros.
+    
+    Run from My Macros:
+    Need to make sure file doesn't exist in My Macros
+    mv ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py_not_used
+
+    
+	libreoffice --draw --accept="socket,host=localhost,port=2002;urp;StarOffice.ServiceManager"        
+    python ~/Desktop/python_embedded_presentation/LO-OO-Macro-Programming-main/draw_uno_plan.py
+    ...Will fail when clicking on the buttons.
+    
+    Restore file in My Macros
+    mv ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py_not_used ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py
+    
+ 
+    python ~/Desktop/python_embedded_presentation/LO-OO-Macro-Programming-main/draw_uno_plan.py
+    
+    libreoffice --draw --accept="socket,host=localhost,port=2002;urp;StarOffice.ServiceManager"
+
+    python ~/.config/libreoffice/4/user/Scripts/python/draw_uno_plan.py
+    
+===
+
+13 to 17 Python embedded in LO/OO documents ...continued
+
+    writer_python_example.odt
+
+    Demo:
+    Code in Geany
+        
+===
+
+19 to 22: APSO Introductions
+
+23 to 32: APSO Download and install
+
+33 to 36: Setting Geany in APSO Options
+
+===
+
+37 to 42: XSCRIPTCONTEXT
+
+
+===
+
+43: Examples of Python code
+
+
+Demo:
+    draw_embeded_python_plan.odg
+        Note: Adding of layers on Start.
+    
+    calc_embedded_python_amortization.odg
+
+Highlight code used in python examples
+
+===
+
+Demo Python Msgbox:
+    write_python_msgbox.odt
+
+Need to open the source code in genany to make it work
+
+===
+
+Code samples Calc 
+
+35-43 Importing into python
+139-142
+
+
+65-69 Using XSCRIPTCONTEXT
+
+116-123 Setting up an A4 page
+
+170-173 - Creating a list to feed into a polypolygonshape
+179 - Add a list within a list for polypolygonshape
+
+
+206-213 - Layer Manager adding layers
+
+304-322 - Adding measurment lines to layer 4. Routine.
+
+
+465-489 - Push button even for piles. SImilar to a Case select in BASIC
+
+572-597 - Main menu to setup page. Just ends. No need to go to loop like GTK or GUI toolkit.
+
+=====
+
+calc_embedded_python_amortization.ods
+
+    Bug with having many years the vertical lines on the chart.
+
+212-231 - Long winded way of setting properties. Bettwe unde BASIC using With statement
+no numbers - BASIC example using nested with statments.
+
+289-313 - Scrollbars callback. 8 levels deep to get sheet by name method()
+
+315-318 - Reporting a bug by writing to file as no errorlog or console
+
+492-504 - Debugging routines
+
+=====
+
+
